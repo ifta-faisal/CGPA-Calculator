@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA and CGPA Calculator</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GPA and CGPA Calculator</h1>
+
+        <!-- Form for Completed Credits and Current CGPA -->
+        <div class="input-section">
+            <label for="completedCredits">Completed Credits:</label>
+            <input type="number" id="completedCredits" placeholder="Enter completed credits" required>
+
+            <label for="currentCGPA">Current CGPA:</label>
+            <input type="number" id="currentCGPA" step="0.01" placeholder="Enter current CGPA" required>
+        </div>
+
+        <!-- Course List Input -->
+        <div id="course-list">
+            <!-- Predefined course input fields (initially 1 course) -->
+            <div class="course-input" id="course1">
+                <label for="course1-name">Course 1:</label>
+                <input type="text" id="course1-name" placeholder="Course Name" required> 
+                <input type="number" id="credits1" placeholder="Credits" required>
+                <select id="grade1">
+                    <option value="4.00">A</option>
+                    <option value="3.67">A-</option>
+                    <option value="3.33">B+</option>
+                    <option value="3.00">B</option>
+                    <option value="2.67">B-</option>
+                    <option value="2.33">C+</option>
+                    <option value="2.00">C</option>
+                    <option value="1.67">C-</option>
+                    <option value="1.33">D+</option>
+                    <option value="1.00">D</option>
+                    <option value="0.00">F</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Button to add another course dynamically -->
+        <button type="button" id="addCourseBtn">Add Another Course</button>
+
+        <!-- Button to calculate GPA and CGPA -->
+        <button type="button" onclick="calculateGPA()">Calculate CGPA</button>
+
+        <!-- Display Result -->
+        <div id="result">
+            <h3>Calculated GPA: <span id="gpa">-</span></h3>
+            <h3>Calculated CGPA: <span id="cgpa">-</span></h3>
+        </div>
+    </div>
+
+    <!-- Include JavaScript for adding courses dynamically -->
+    <script src="script.js"></script>
+</body>
+</html>
